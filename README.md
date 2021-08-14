@@ -11,3 +11,6 @@ Json ka link
 https://console.firebase.google.com/u/0/project/login-2d684/authentication/users
 
 Firebase-sainanehwal08- login folder
+
+Document with details of upcoming plans:-
+https://docs.google.com/document/d/1jnwMPSsTtbJc8-C2MbgBFrI3A7pPENl_waYaTN9_2mk/edit?usp=sharing
