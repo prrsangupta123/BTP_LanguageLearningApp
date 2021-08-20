@@ -85,7 +85,7 @@ public class Quiz1 extends AppCompatActivity {
                 try {
                     JSONObject feedObj = response.getJSONObject("feed");
                     JSONArray entryArray = feedObj.getJSONArray("entry");
-                    for(int i=0; i<10; i++) {
+                    /*for(int i=0; i<10; i++) {
                         //Random rand = new Random();
                         //int i=rand.nextInt(10);
                         JSONObject entryObj = entryArray.getJSONObject(i);
@@ -111,8 +111,8 @@ public class Quiz1 extends AppCompatActivity {
                     String email11 = entryObj.getJSONObject("gsx$email").getString("$t");
                     String avatar11 = entryObj.getJSONObject("gsx$avatar").getString("$t");
                     queList.add(new QuestionClass(firstName11, lastName11, email11,
-                            avatar11, "ans 4", "ans 3"));*/
-                    }
+                            avatar11, "ans 4", "ans 3"));
+                    }*/
                     for(int i=0;i<10;i++){
                         Random rand=new Random();
                         int j=rand.nextInt(7);
@@ -123,31 +123,31 @@ public class Quiz1 extends AppCompatActivity {
                         String avatar = entryObj.getJSONObject("gsx$avatar").getString("$t");
                         String av = entryObj.getJSONObject("gsx$av").getString("$t");
                         if(j==0){
-                            queList.add(new QuestionClass(firstName, av,email,lastName,avatar,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName, av,email,lastName,avatar,email));
                         }
                         else if(j==1){
-                            queList.add(new QuestionClass(firstName, email,lastName,avatar,av,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName, email,lastName,avatar,av,email));
                         }
                         else if(j==2){
-                            queList.add(new QuestionClass(firstName, lastName,email,avatar,av,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName, lastName,email,avatar,av,email));
 
                         }
                         else if(j==3){
-                            queList.add(new QuestionClass(firstName,lastName,avatar,email,av,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName,lastName,avatar,email,av,email));
 
                         }
                         else if(j==4){
-                            queList.add(new QuestionClass(firstName,lastName,avatar,av,email,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName,lastName,avatar,av,email,email));
                         }
                         else if(j==5){
-                            queList.add(new QuestionClass(firstName, email,avatar,lastName,av,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName, email,avatar,lastName,av,email));
                         }
                         else if(j==6){
-                            queList.add(new QuestionClass(firstName, email,avatar,av,lastName,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName, email,avatar,av,lastName,email));
 
                         }
                         else if(j==7){
-                            queList.add(new QuestionClass(firstName, email,lastName,av,avatar,ansList.get(i)));
+                            queList.add(new QuestionClass(firstName, email,lastName,av,avatar,email));
 
                         }
                         //queList.add(new QuestionClass(firstName, email,lastName,avatar,av, email));

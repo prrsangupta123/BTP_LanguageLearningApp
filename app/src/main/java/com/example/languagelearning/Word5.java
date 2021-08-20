@@ -63,7 +63,7 @@ public class Word5 extends AppCompatActivity {
     private void getDataFromAPI() {
 
         // creating a string variable for URL.
-        String url = "https://spreadsheets.google.com/feeds/list/1rw49V9V6cVgnCEwao6SOtFj_cmC-niTO9hSu6VL_S3k/od6/public/values?alt=json";
+        String url = "https://spreadsheets.google.com/feeds/list/10s-2Ezrsk1a4-Xv7a_OXjqhvB9_XLed87lipUvcW5lY/od6/public/values?alt=json";
         // String url = "https://docs.google.com/spreadsheets/d/1rw49V9V6cVgnCEwao6SOtFj_cmC-niTO9hSu6VL_S3k/edit?usp=drivesdk";
 
         // creating a new variable for our request queue
@@ -94,8 +94,8 @@ public class Word5 extends AppCompatActivity {
                         // setting adapter to our recycler view.
                         userRV.setAdapter(userRVAdapter);
                     }*/
-                    Random rand = new Random();
-                    int i=rand.nextInt(265);
+                    //Random rand = new Random();
+                    int i=6;//rand.nextInt(21);
                     JSONObject entryObj = entryArray.getJSONObject(i);
                     String firstName = entryObj.getJSONObject("gsx$firstname").getString("$t");
                     String lastName = entryObj.getJSONObject("gsx$lastname").getString("$t");

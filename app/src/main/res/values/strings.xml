@@ -41,5 +41,8 @@
     <string name="avtar">avtar</string>
     <string name="first_name">first_name</string>
     <string name="second_text_view">second_text_view</string>
+    <string name="english_word">english_word</string>
+    <string name="HINDI_WORD">hindi_word</string>
+    <string name="telugu_word">telugu_word</string>
 
 </resources>

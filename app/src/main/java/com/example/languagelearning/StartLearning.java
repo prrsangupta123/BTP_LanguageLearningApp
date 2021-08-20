@@ -33,11 +33,11 @@ public class StartLearning extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_learning);
 
-        Level1 = findViewById(R.id.button);
-        Level2 = findViewById(R.id.Level2);
-        Level3 = findViewById(R.id.button2);
-        Level4 = findViewById(R.id.button12);
-        Level5 = findViewById(R.id.button13);
+        Level1 = findViewById(R.id.button14);
+        Level2 = findViewById(R.id.button17);
+        Level3 = findViewById(R.id.button18);
+        Level4 = findViewById(R.id.button19);
+        Level5 = findViewById(R.id.button20);
         fAuth = FirebaseAuth.getInstance();
 
 

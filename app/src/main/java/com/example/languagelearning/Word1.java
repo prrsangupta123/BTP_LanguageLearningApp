@@ -66,7 +66,8 @@ public class Word1 extends AppCompatActivity {
     private void getDataFromAPI() {
 
         // creating a string variable for URL.
-        String url = "https://spreadsheets.google.com/feeds/list/1rw49V9V6cVgnCEwao6SOtFj_cmC-niTO9hSu6VL_S3k/od6/public/values?alt=json";
+        String url = "https://script.googleusercontent.com/macros/echo?user_content_key=Z9mNhwoBEcWp6Vh5hObmFMYjD79BxuK51Ojlql-DKQ4mbNkn59QUTZUk21-8QJ86G80kWmItUJvKeGx9T3CvhNy6DAxhGWtjOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwUD5nZx6M7Ox4TxU6o7HZsyFSV-aY2SDShqUixyuDd6otmXw9ULCYJKtvxYwb91JSp5y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
+       // String url = "https://spreadsheets.google.com/feeds/list/1sLfeViM58v2qakNlzd4ACR8-usvuVGzRwm_AN3BBPnM/od6/public/values?alt=json";
        // String url = "https://docs.google.com/spreadsheets/d/1rw49V9V6cVgnCEwao6SOtFj_cmC-niTO9hSu6VL_S3k/edit?usp=drivesdk";
 
         // creating a new variable for our request queue
@@ -97,8 +98,8 @@ public class Word1 extends AppCompatActivity {
                         // setting adapter to our recycler view.
                         userRV.setAdapter(userRVAdapter);
                     }*/
-                    Random rand = new Random();
-                    int i=rand.nextInt(265);
+                    //Random rand = new Random();
+                    int i=0;//rand.nextInt(21);
                     JSONObject entryObj = entryArray.getJSONObject(i);
                     String firstName = entryObj.getJSONObject("gsx$firstname").getString("$t");
                     String lastName = entryObj.getJSONObject("gsx$lastname").getString("$t");
