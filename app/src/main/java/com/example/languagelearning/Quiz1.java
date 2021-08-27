@@ -1,4 +1,5 @@
 package com.example.languagelearning;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -72,7 +73,8 @@ public class Quiz1 extends AppCompatActivity {
     private void getDataFromAPI() {
 
         // creating a string variable for URL.
-        String url = "https://spreadsheets.google.com/feeds/list/1Wa6NTIaN3i81uDOKa7bf_u6lDVWReDEto41FPSOVhuI/od6/public/values?alt=json";
+          String url="https://script.googleusercontent.com/macros/echo?user_content_key=BT_cd_VnbAMlM557sQcHUKjBkUoJ3z6CkK2db1sX_1d1G7hHb9lXrtT5GvD60zMq4ulKxidOTivz4tb1lnxKhYabrm8ZR_kqOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwUJJbN7MxLSqfIfKRzvx-FkDL_yPQqz0pBf0CqjwXfvGYxBTTVu962N2uHADTQdpyr5y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
+        //String url = "https://spreadsheets.google.com/feeds/list/1Wa6NTIaN3i81uDOKa7bf_u6lDVWReDEto41FPSOVhuI/od6/public/values?alt=json";
         // String url = "https://docs.google.com/spreadsheets/d/1rw49V9V6cVgnCEwao6SOtFj_cmC-niTO9hSu6VL_S3k/edit?usp=drivesdk";
 
         // creating a new variable for our request queue
@@ -83,45 +85,35 @@ public class Quiz1 extends AppCompatActivity {
             @Override
             public void onResponse(JSONObject response) {
                 try {
-                    JSONObject feedObj = response.getJSONObject("feed");
-                    JSONArray entryArray = feedObj.getJSONArray("entry");
-                    /*for(int i=0; i<10; i++) {
-                        //Random rand = new Random();
-                        //int i=rand.nextInt(10);
-                        JSONObject entryObj = entryArray.getJSONObject(i);
-                        //String firstName = entryObj.getJSONObject("gsx$firstname").getString("$t");
-                        //String lastName = entryObj.getJSONObject("gsx$lastname").getString("$t");
-                        String email = entryObj.getJSONObject("gsx$email").getString("$t");
-                        //String avatar = entryObj.getJSONObject("gsx$avatar").getString("$t");
-                        //String av = entryObj.getJSONObject("gsx$av").getString("$t");
-                        //queList.add(new QuestionClass(firstName, email,lastName,avatar,av, email));
-                        ansList.add(email);
-                    /*int j=rand.nextInt(10);
-                    JSONObject entryObj1 = entryArray.getJSONObject(j);
-                    String firstName1 = entryObj.getJSONObject("gsx$firstname").getString("$t");
-                    String lastName1 = entryObj.getJSONObject("gsx$lastname").getString("$t");
-                    String email1 = entryObj.getJSONObject("gsx$email").getString("$t");
-                    String avatar1 = entryObj.getJSONObject("gsx$avatar").getString("$t");
-                    queList.add(new QuestionClass(firstName1, lastName1, email1,
-                            avatar1, "ans 4", lastName1));
-                    int k=rand.nextInt(10);
-                    JSONObject entryObj11 = entryArray.getJSONObject(k);
-                    String firstName11 = entryObj.getJSONObject("gsx$firstname").getString("$t");
-                    String lastName11 = entryObj.getJSONObject("gsx$lastname").getString("$t");
-                    String email11 = entryObj.getJSONObject("gsx$email").getString("$t");
-                    String avatar11 = entryObj.getJSONObject("gsx$avatar").getString("$t");
-                    queList.add(new QuestionClass(firstName11, lastName11, email11,
-                            avatar11, "ans 4", "ans 3"));
-                    }*/
-                    for(int i=0;i<10;i++){
+                    //JSONObject feedObj = response.getJSONObject("feed");
+                    JSONArray entryArray = response.getJSONArray("Sheet1");
+
+                    for(int i=0;i<20;i++){
                         Random rand=new Random();
                         int j=rand.nextInt(7);
+                        int a=rand.nextInt(19);
+                        while(a==i){
+                            a=rand.nextInt(19);
+                        }
+                        int b=rand.nextInt(19);
+                        while(b==i || a==b){
+                            b=rand.nextInt(19);
+                        }
+                        int c=rand.nextInt(19);
+                        while(c==i || c==b || c==a){
+                            c=rand.nextInt(19);
+                        }
                         JSONObject entryObj = entryArray.getJSONObject(i);
-                        String firstName = entryObj.getJSONObject("gsx$firstname").getString("$t");
-                        String lastName = entryObj.getJSONObject("gsx$lastname").getString("$t");
-                        String email = entryObj.getJSONObject("gsx$email").getString("$t");
-                        String avatar = entryObj.getJSONObject("gsx$avatar").getString("$t");
-                        String av = entryObj.getJSONObject("gsx$av").getString("$t");
+                        JSONObject A=entryArray.getJSONObject(a);
+                        JSONObject B=entryArray.getJSONObject(b);
+                        JSONObject C=entryArray.getJSONObject(c);
+
+                        String firstName=entryObj.getString("email");
+                        String email=entryObj.getString("first_name");
+                        String lastName = A.getString("first_name");
+                        String avatar = B.getString("first_name");
+                        String av =C.getString("first_name");
+
                         if(j==0){
                             queList.add(new QuestionClass(firstName, av,email,lastName,avatar,email));
                         }
@@ -204,7 +196,7 @@ public class Quiz1 extends AppCompatActivity {
             tm.start();
         }
 
-        tvQue.setText("#" + (n + 1) + " " + q.getQue());
+        tvQue.setText("#" + (n + 1) + "Choose Right word for" +" "+ q.getQue());
         btOpt1.setText("" + q.getOpt1());
         btOpt2.setText("" + q.getOpt2());
         btOpt3.setText("" + q.getOpt3());
@@ -252,7 +244,7 @@ public class Quiz1 extends AppCompatActivity {
                     Toast.makeText(Quiz1.this, "Correct Answer", Toast.LENGTH_LONG).show();
 
                     if (conter < (queList.size() - 1)) {
-                       // tm.cancel();
+                        // tm.cancel();
                         conter++;
                         score++;
                         loadQuetions(conter);
@@ -340,6 +332,8 @@ public class Quiz1 extends AppCompatActivity {
         return score;
     }
 }
+
+
 
 
 
