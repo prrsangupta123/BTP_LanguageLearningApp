@@ -176,7 +176,7 @@ public class Word_5 extends AppCompatActivity {
                 //startActivity(new Intent(getApplicationContext(),Word2.class));
 
                 else {
-                    startActivity(new Intent(getApplicationContext(),Quiz1.class));
+                    startActivity(new Intent(getApplicationContext(),Quiz5.class));
                 }
             }
         });

@@ -160,9 +160,9 @@ public class Word_4 extends AppCompatActivity {
         String firstName=q.getFirstName();
         String lastName=q.getLastName();
         String email=q.getEmail();
-        //String avatar=q.getAvatar();
+        String avatar=q.getAvatar();
 
-        //Picasso.get().load(avatar).into(Avatar);
+        Picasso.get().load(avatar).into(Avatar);
         FirstName.setText(firstName);
         LastName.setText(lastName);
         Email.setText(email);
@@ -176,7 +176,7 @@ public class Word_4 extends AppCompatActivity {
                 //startActivity(new Intent(getApplicationContext(),Word2.class));
 
                 else {
-                    startActivity(new Intent(getApplicationContext(),Quiz1.class));
+                    startActivity(new Intent(getApplicationContext(),Quiz4.class));
                 }
             }
         });

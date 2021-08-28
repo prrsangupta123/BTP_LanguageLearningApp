@@ -85,7 +85,7 @@ public class Word extends AppCompatActivity {
                     //JSONObject feedObj = response.getJSONObject("feed");
                     JSONArray entryArray = response.getJSONArray("Sheet1");
                     int i=0;
-                    for( i = 0; i < 10; i++) {
+                    for( i = 0; i < 20; i++) {
                         //int i=10;
                         JSONObject entryObj = entryArray.getJSONObject(i);
                         String firstName=entryObj.getString("first_name");
