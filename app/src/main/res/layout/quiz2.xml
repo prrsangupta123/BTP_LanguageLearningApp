@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/quiz"
-    tools:context=".Quiz1">
+    tools:context=".Quiz2">
 
 
     <!-- que counter section -->
@@ -55,7 +55,7 @@
 
         <!-- op1 -->
         <Button
-            android:id="@+id/btOpt1"
+            android:id="@+id/btOpt5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -63,11 +63,10 @@
             android:gravity="start|center_vertical"
             android:text="@string/option_1"
             android:textAlignment="textStart"
-            android:textColor="#455A64"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck" />
         <!-- op2 -->
         <Button
-            android:id="@+id/btOpt2"
+            android:id="@+id/btOpt6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -79,7 +78,7 @@
 
         <!-- op3 -->
         <Button
-            android:id="@+id/btOpt3"
+            android:id="@+id/btOpt7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -90,7 +89,7 @@
 
         <!--  op4-->
         <Button
-            android:id="@+id/btOpt4"
+            android:id="@+id/btOpt8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"

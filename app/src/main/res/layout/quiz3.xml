@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/quiz"
-    tools:context=".Quiz1">
+    tools:context=".Quiz3">
 
 
     <!-- que counter section -->
@@ -63,8 +63,7 @@
             android:gravity="start|center_vertical"
             android:text="@string/option_1"
             android:textAlignment="textStart"
-            android:textColor="#455A64"
-            tools:ignore="TextContrastCheck,TextContrastCheck" />
+            tools:ignore="TextContrastCheck" />
         <!-- op2 -->
         <Button
             android:id="@+id/btOpt2"
