@@ -105,7 +105,7 @@ public class Word extends AppCompatActivity {
                 email = String.valueOf(e);
                 avatar = String.valueOf(a);
 
-                Picasso.get().load(avatar).into(Avatar);
+                Picasso.get().load(avatar).resize(250,250).into(Avatar);
                 FirstName.setText(firstName);
                 LastName.setText(lastName);
                 Email.setText(email);
@@ -119,7 +119,7 @@ public class Word extends AppCompatActivity {
                             getDataFromAPI();
                         }
                         else{
-                            startActivity(new Intent(getApplicationContext(),Quiz1.class));
+                            startActivity(new Intent(getApplicationContext(),Testing.class));
                         }
                         //startActivity(new Intent(getApplicationContext(),Word2.class));
                     }

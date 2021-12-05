@@ -11,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 public class Quiz3 extends AppCompatActivity {
@@ -28,7 +30,7 @@ public class Quiz3 extends AppCompatActivity {
     TextView tvQueConter, tvTimer, tvQue;
 
     Button btOpt1, btOpt2, btOpt3, btOpt4;
-    int size=20;
+    int size=12;
 
     //list for que
     ArrayList<QuestionClass> queList = new ArrayList<>();
@@ -81,17 +83,17 @@ public class Quiz3 extends AppCompatActivity {
     private void loop() {
         Random rand = new Random();
         int j = rand.nextInt(7);
-        int a = rand.nextInt(19);
-        while (a == conter) {
-            a = rand.nextInt(19);
+        int a = rand.nextInt(12);
+        while (a == conter || a == 0) {
+            a = rand.nextInt(12);
         }
-        int b = rand.nextInt(19);
-        while (b == conter || a == b) {
-            b = rand.nextInt(19);
+        int b = rand.nextInt(12);
+        while (b == conter || a == b || b == 0) {
+            b = rand.nextInt(12);
         }
-        int c = rand.nextInt(19);
-        while (c == conter || c == b || c == a) {
-            c = rand.nextInt(19);
+        int c = rand.nextInt(12);
+        while (c == conter || c == b || c == a || c == 0) {
+            c = rand.nextInt(12);
         }
         //  tvTimer.setText("12");
         //countdown time
@@ -229,6 +231,7 @@ public class Quiz3 extends AppCompatActivity {
                             Toast.makeText(Quiz3.this, "All Que Completed!", Toast.LENGTH_LONG).show();
                             String s = String.valueOf(score);
                             Toast.makeText(Quiz3.this, s, Toast.LENGTH_LONG).show();
+                            store(score);
                             startActivity(new Intent(getApplicationContext(), Fin3.class));
 
                         }
@@ -249,6 +252,15 @@ public class Quiz3 extends AppCompatActivity {
     }
     public static Integer getScore2(){
         return score;
+    }
+    public void store(int score) {
+        FirebaseAuth fAuth = FirebaseAuth.getInstance();
+        String userId = Objects.requireNonNull(fAuth.getCurrentUser()).getUid();
+        FirebaseDatabase rootNode = FirebaseDatabase.getInstance();
+        DatabaseReference reference = rootNode.getReference();
+        DatabaseReference reference1 = reference.child("users");
+        DatabaseReference reference2 = reference1.child(userId);
+        reference2.child("Greetings").child("Test1").setValue(score);
     }
 }
 

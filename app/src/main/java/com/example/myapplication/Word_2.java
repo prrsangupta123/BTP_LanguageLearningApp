@@ -104,7 +104,7 @@ public class Word_2 extends AppCompatActivity {
                 email = String.valueOf(e);
                 avatar = String.valueOf(a);
 
-                //Picasso.get().load(avatar).into(Avatar);
+                //Picasso.get().load(avatar).resize(250,250).into(Avatar);
                 FirstName.setText(firstName);
                 LastName.setText(lastName);
                 Email.setText(email);
@@ -112,13 +112,13 @@ public class Word_2 extends AppCompatActivity {
                 button4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (counter < 21) {
+                        if (counter < 20) {
                             counter++;
                             myref1 = myref2.child(Integer.toString(counter));
                             getDataFromAPI();
                         }
                         else{
-                            startActivity(new Intent(getApplicationContext(),Quiz2.class));
+                            startActivity(new Intent(getApplicationContext(),Testing2.class));
                         }
                         //startActivity(new Intent(getApplicationContext(),Word2.class));
                     }

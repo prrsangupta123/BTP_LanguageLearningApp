@@ -1,7 +1,6 @@
 package com.example.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -11,26 +10,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import com.squareup.picasso.Picasso;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Word_5 extends AppCompatActivity {
 
@@ -61,7 +48,7 @@ public class Word_5 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_word_4);
+        setContentView(R.layout.activity_word_5);
 
         // creating a new array list.
         FirstName = findViewById(R.id.firstName);
@@ -116,7 +103,7 @@ public class Word_5 extends AppCompatActivity {
                 email = String.valueOf(e);
                 avatar = String.valueOf(a);
 
-                //Picasso.get().load(avatar).into(Avatar);
+                //Picasso.get().load(avatar).resize(250,250).into(Avatar);
                 FirstName.setText(firstName);
                 LastName.setText(lastName);
                 Email.setText(email);
@@ -124,13 +111,13 @@ public class Word_5 extends AppCompatActivity {
                 button7.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (counter < 8) {
+                        if (counter < 7) {
                             counter++;
                             myref1 = myref2.child(Integer.toString(counter));
                             getDataFromAPI();
                         }
                         else{
-                            startActivity(new Intent(getApplicationContext(),Quiz5.class));
+                            startActivity(new Intent(getApplicationContext(),Testing5.class));
                         }
                         //startActivity(new Intent(getApplicationContext(),Word2.class));
                     }

@@ -1,21 +1,22 @@
 package com.example.myapplication;
 
 public class WordClass {
-    String FirstName, LastName, Email, Avatar;
+    public  WordClass() {}
+    String First_name, LastName, Email, Avatar;
 
-    public WordClass(String firstName, String lastName, String email, String avatar) {
+    /*public WordClass(String firstName, String lastName, String email, String avatar) {
         this.FirstName = firstName;
         this.LastName = lastName;
         this.Email = email;
         this.Avatar = avatar;
+    }*/
+
+    public String getFirst_name() {
+        return First_name;
     }
 
-    public String getFirstName() {
-        return FirstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.FirstName = firstName;
+    public void setFirst_name(String first_name) {
+        this.First_name = first_name;
     }
 
     public String getLastName() {
